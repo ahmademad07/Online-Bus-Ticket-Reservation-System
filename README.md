@@ -79,7 +79,7 @@ This project simulates real-world bus booking operations including seat manageme
 ---
 
 ## 📸 Sample Output
-
+```
 ====== TICKET DETAILS ======
 Bus Type       : AC
 Seat Number    : A1
@@ -92,7 +92,7 @@ Issued At      : 05:30 PM
 Date Of Journey: 12-04-2026
 Departure Time : 08:00 AM
 ============================
-
+```
 ---
 
 ## ⚙️ System Workflow
