@@ -264,6 +264,20 @@ const char *districts[DIV][20] = {
 
 int district_count[DIV] = {13, 11, 8, 10, 6, 4, 8, 4};
 
+/* ROUTE CONNECTIVITY GRAPH
+   1 = route available
+   0 = route not available*/
+int divisionGraph[8][8] = {
+    {0,1,1,1,1,1,1,1},
+    {1,0,1,1,1,1,1,1},
+    {1,1,0,1,1,1,1,1},
+    {1,1,1,0,1,1,1,1},
+    {1,1,1,1,0,1,1,1},
+    {1,1,1,1,1,0,1,1},
+    {1,1,1,1,1,1,0,1},
+    {1,1,1,1,1,1,1,0}
+};
+
 /* -------------------- Route Selection -------------------- */
 /*
     This function lets the user choose:
@@ -327,6 +341,13 @@ void selectroute()
         printf("Invalid District!\n");
         return;
     }
+
+    if (divisionGraph[fromDiv][toDiv] == 0)
+{
+    printf("\nNo direct route available between %s and %s!\n",
+           divisions[fromDiv], divisions[toDiv]);
+    return;
+}
 
     sprintf(from_location, "%s, %s", districts[fromDiv][fromDist], divisions[fromDiv]);
     sprintf(to_location, "%s, %s", districts[toDiv][toDist], divisions[toDiv]);
