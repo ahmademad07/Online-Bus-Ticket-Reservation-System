@@ -1,108 +1,101 @@
-# 🚌 Bus Ticket Management System in C
+Bus Ticket Booking System (C)
 
-A fully functional console-based Bus Ticket Management System written in C.
-This project simulates real-world bus booking operations including seat management, route selection, ticket generation, and cancellation with refund calculation.
+This is a console-based Bus Ticket Booking System written in C. It allows users to select bus types, choose routes across Bangladesh, book seats, cancel tickets, and print ticket details.
 
----
+--------------------------------------------------
 
-## 🚀 Features
+Features
 
-* 🎟️ Book Bus Tickets
-* ❌ Cancel Tickets with Refund System
-* 🧾 Print Detailed Ticket
-* 🪑 Seat Layout Visualization (Live Status)
-* 🗺️ Division & District-Based Route Selection
-* 🧠 Efficient Ticket Storage using Binary Search Tree (BST)
-* ⏱️ Time-Based Journey Scheduling
+- Select different bus types:
+  1. Non-AC
+  2. AC
+  3. Sleeper
 
----
+- Choose routes:
+  - From one district to another (within Bangladesh divisions)
 
-* Stores ticket records using **seat number as key**
-* Supports:
+- Seat management:
+  - View available seats
+  - Book seats
+  - Cancel bookings
 
-  * Fast insertion
-  * Quick search
-  * Efficient deletion
+- Ticket system:
+  - Store passenger details (name, phone)
+  - Track issue time and journey time
+  - Print ticket info
 
----
+- Refund system:
+  - 85% refund if cancelled 16+ hours before journey
+  - No refund if less than 16 hours
 
-## 🗺️ Route System
+--------------------------------------------------
 
-* Supports **8 divisions of Bangladesh**:
+How It Works
 
-  * Dhaka
-  * Chittagong
-  * Sylhet
-  * Rajshahi
-  * Khulna
-  * Barisal
-  * Rangpur
-  * Mymensingh
+1. Start the program
+2. Choose a bus type
+3. Select your route (from & to)
+4. View available seats
+5. Book a seat
+6. Print or cancel ticket anytime
 
-* Each division contains multiple districts
+--------------------------------------------------
 
-* Dynamic district selection using `districtCount[]`
+Data Structure Used
 
-* Division connectivity handled via adjacency matrix
+- Binary Search Tree (BST)
+  Used to store and manage ticket records based on seat number:
+  - Fast search
+  - Easy insertion
+  - Easy deletion
 
----
+--------------------------------------------------
 
-## 💺 Seat Configuration
+Seat Layout
 
-| Bus Type | Total Seats | Layout          |
-| -------- | ----------- | --------------- |
-| Non-AC   | 32          | 4 seats per row |
-| AC       | 24          | 3 seats per row |
-| Sleeper  | 12          | 2 seats per row |
+- Non-AC: 32 seats (A1–H4)
+- AC: 24 seats (A1–H3)
+- Sleeper: 12 seats (A1–F2)
 
----
+--------------------------------------------------
 
-## 💰 Ticket Pricing
+Ticket Prices
 
-| Bus Type | Price    |
-| -------- | -------- |
-| Non-AC   | 800 BDT  |
-| AC       | 1600 BDT |
-| Sleeper  | 2000 BDT |
+- Non-AC: 800
+- AC: 1600
+- Sleeper: 2000
 
----
+--------------------------------------------------
 
-## 📋 Ticket Information Includes
+Refund Policy
 
-* Bus Type
-* Seat Number
-* Passenger Name & Phone
-* From & To (Division + District)
-* Issue Date & Time
-* Journey Date & Time
-
----
-
-## 📸 Sample Output
-```
-====== TICKET DETAILS ======
-Bus Type       : AC
-Seat Number    : A1
-Name           : John Doe
-Phone          : 0123456789
-From           : Dhaka (Gazipur)
-To             : Rajshahi (Bogra)
-Date Of Issue  : 10-04-2026
-Issued At      : 05:30 PM
-Date Of Journey: 12-04-2026
-Departure Time : 08:00 AM
-============================
-```
----
-
-## ⚙️ System Workflow
-
-1. Select Bus Type
-2. Choose Route (Division → District)
-3. View Available Seats
-4. Book Ticket
-5. Print or Cancel Ticket
-
----
+- Cancel 16 hours or more before journey → 85% refund
+- Cancel less than 16 hours → No refund
 
 
+--------------------------------------------------
+
+Notes
+
+- You must select bus type first before doing anything else
+- You must select route before booking ticket
+- Seat numbers must match exactly (like A1, B2, etc.)
+- Data is not saved after program exit (no file handling yet)
+
+--------------------------------------------------
+
+Future Improvements
+
+- Add file storage (save tickets permanently)
+- Add login system
+- Improve UI (better formatting or graphics)
+- Add multiple buses & schedules
+
+--------------------------------------------------
+
+Author
+
+This project was created for learning purposes:
+- C programming
+- Data structures (BST)
+- Real-life system simulation
